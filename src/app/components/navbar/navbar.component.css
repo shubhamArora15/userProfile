@@ -1,0 +1,13 @@
+.side-nav {
+    float:left;
+    text-transform: capitalize;
+    color:#ccc;
+    font-size: 20px;
+    width:30%;
+}
+
+.right-nav {
+    float:right;
+    width:70%;
+    text-align:right;
+}

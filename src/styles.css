@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{
+    height: 100%;width:100%;
+    margin:0;padding:0;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background: #2F2F2F; */
+  }
+
+  /*  */
+  nav{
+    height:34%; 
+    width:96%;
+    border-bottom: 1% solid black;
+    margin: auto;
+    padding-top: 5%;
+  }
+
+
+  .clear {
+    clear:both
+}
+  /*  */
+  
+  .container {
+    height: 500px;
+    width:100%;
+    margin: auto;
+  }
+  
+  /*--------- */
+
+  footer {
+    color:white;
+    height: 10%;
+    width:100%;
+    text-align: center;
+    background: #4B4B4B;
+  }

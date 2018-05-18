@@ -1,0 +1,20 @@
+<div class="container">
+    
+    <div class="content">
+        <div class="profile">
+            <img src="../../assets/images/profile.jpg" alt="">
+            <!-- <caption>{{profile['name']}}</caption> -->
+        </div>
+        <div class="info" *ngIf = "profile">
+            <table class="table table-dark">
+                <caption style="font-size:16px;">Profile</caption>
+                <tr *ngFor = "let key of generateObject(profile)"> 
+                    <td style="font-weight:bold;background:white;text-transform:capitalize"> {{key}} </td>  <td> {{profile[key]}} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="map" id="map">
+        
+    </div>
+</div>

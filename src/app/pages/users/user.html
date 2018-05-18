@@ -1,0 +1,72 @@
+<div class="container">
+    <button class="btn btn-primary" style="float:right" data-target="#userModal" data-toggle="modal">Create User</button>
+    <table class="table">
+        <thead>
+        <tr>
+            <td *ngFor = "let col of columns" style="text-transform:capitalize;font-weight:bold" >{{col}}</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let row of rows" >
+            <td *ngFor = "let col of columns" (click) = "profile(row['_id'])">{{row[col]}}</td>
+            <td style="z-index:1000">
+                <button class="btn btn-primary" (click) = "setUser(row['_id'])">Edit</button>
+                <button class="btn btn-secondary" (click) = "deleteUser(row['_id'])">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>  
+
+    <!-- Create user -->
+
+    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="userModal" role="dialog" tabindex="-1" style="display: none;">
+        <div class="modal-dialog modal-notice">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+                        <i class="material-icons">clear</i>
+                    </button>
+                    <h5 class="modal-title" id="myModalLabel">Create User</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="instruction">
+    
+                        <div class="form-group is-empty">
+                            <label class="control-label">Name *
+                            </label>
+                            <input id="inputAgentName" [(ngModel)]="userObj.users.name" class="form-control" name="name" type="text" required="true">
+                            <span class="material-input"></span>
+                        </div>
+    
+                        <div class="form-group is-empty">
+                            <label class="control-label">Mobile *
+                            </label>
+    
+                            <input [(ngModel)]="userObj.users.mobile" class="form-control" name="mobile" type="tel" maxlength="10" minlength="10" required="true">
+                            <span class="material-input"></span>
+                        </div>
+                        <div class="form-group is-empty">
+                            <label class="control-label">Age *
+                            </label>
+    
+                            <input [(ngModel)]="userObj.users.age" class="form-control" name="age" type="text" required="true">
+                            <span class="material-input"></span>
+                        </div>
+                        <div class="form-group is-empty">
+                            <label class="control-label">Address *
+                            </label>
+    
+                            <input [(ngModel)]="userObj.users.address" class="form-control" name="mobile" type="tel" required="true">
+                            <span class="material-input"></span>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <button id="createUserButton" class="btn btn-info btn-round" (click)="createAndUpdateUser()" type="button">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
